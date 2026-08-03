@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- Created with https://packager.turbowarp.org/ -->
+<!-- 由 https://packager.turbowarp.org/ 创建 -->
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <title>张鑫换装</title>
+  <title>王瑞的个人主页</title>
   <style>
     body {
       color: #ffffff;
@@ -340,7 +340,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
         storage.addHelper({
           load: (assetType, assetId, dataFormat) => {
             if (!zip) {
-              throw new Error('Zip is not loaded or has been closed');
+              throw new Error('压缩包未加载或已关闭');
             }
             const path = assetId + '.' + dataFormat;
             const file = findFileInZip(path);
@@ -355,7 +355,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
         });
         return () => (() => {
         const buffer = projectDecodeBuffer;
-        projectDecodeBuffer = null; // Allow GC
+        projectDecodeBuffer = null; // 允许垃圾回收
         return Promise.resolve(new Uint8Array(buffer, 0, 222029));
       })().then(async (data) => {
           zip = await Scaffolding.JSZip.loadAsync(data);
